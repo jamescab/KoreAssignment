@@ -1,0 +1,1551 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/25/2024 7:05:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-09SH8VG"
+  DTS:CreatorName="DESKTOP-09SH8VG\james"
+  DTS:DTSID="{8F2741BA-CFFD-442C-BF0E-02CD6B478E02}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{5CA5CBDF-CE6C-4998-960A-E781DC10189D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{788F235F-144B-4E6D-A158-815F28A2F225}"
+      DTS:ObjectName="CSV File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\james\Downloads\KOREData.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UserID"
+              DTS:DTSID="{1CA93F42-0106-47C5-8528-35C1FB95D4D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FullName"
+              DTS:DTSID="{1462FA80-2C49-41E1-AEBA-BC221FF1DB68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{BF16A974-91EC-4C92-B31F-B3BA392FBF88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Email"
+              DTS:DTSID="{2C5DD61C-A71F-4A25-A283-73C76890B551}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegistrationDate"
+              DTS:DTSID="{3DB18FC1-F2B8-4099-B4C9-1677EF8AE667}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastLoginDate"
+              DTS:DTSID="{AFAA0077-997D-48F6-8060-61FAC9CF3B7C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PurchaseTotal"
+              DTS:DTSID="{F7F2BC9C-510E-40D8-8601-6C824AA1C199}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-09SH8VG\SQL2022.KoreAssignment_{James_Cabaral\}1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}"
+      DTS:ObjectName="DESKTOP-09SH8VG\SQL2022.KoreAssignment_{James_Cabaral}1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-09SH8VG\SQL2022;Initial Catalog=KoreAssignment_{James_Cabaral};Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}DESKTOP-09SH8VG\SQL2022.KoreAssignment_{James_Cabaral}1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Check Duplicates"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{902AAD57-4192-4CD1-8E66-785312403918}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check Duplicates"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}"
+          SQLTask:SqlStatementSource="BEGIN TRANSACTION;&#xA;&#xA;WITH Total_CTE AS (&#xA;    SELECT UserID, SUM(PurchaseTotal) AS TotalPurchase&#xA;    FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;    GROUP BY UserID&#xA;)&#xA;&#xA;UPDATE [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;SET PurchaseTotal = (&#xA;&#x9;SELECT TotalPurchase&#xA;&#x9;FROM Total_CTE&#xA;&#x9;WHERE Total_CTE.UserID = [KoreAssignment_{James_Cabaral}].[stg].[Users].UserID&#xA;)&#xA;WHERE UserID IN (SELECT UserID FROM Total_CTE);&#xA;&#xA;WITH Dupe_CTE AS (&#xA;    SELECT UserID, PurchaseTotal, ROW_NUMBER() OVER(PARTITION BY UserID ORDER BY UserID) AS RowNum&#xA;    FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;)&#xA;DELETE FROM Dupe_CTE WHERE RowNum &gt; 1;&#xA;&#xA;COMMIT TRANSACTION;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Check Email"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F900870E-7377-49B6-8F14-5D2AB994E364}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check Email"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}"
+          SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#xA;INSERT INTO [KoreAssignment_{James_Cabaral}].[dbo].[Invalids]&#xA;SELECT UserID, FullName, Age, Email, RegistrationDate, LastLoginDate, PurchaseTotal&#xA;FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE Email IS NULL OR CHARINDEX('@', Email) &lt; 1&#xA;&#xA;DELETE FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE Email IS NULL OR CHARINDEX('@', Email) &lt; 1&#xA;&#xA;COMMIT TRANSACTION" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Check FullName"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FA0C7F51-2770-4687-8633-FA6F63A4C928}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check FullName"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}"
+          SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#xA;INSERT INTO [KoreAssignment_{James_Cabaral}].[dbo].[Invalids]&#xA;SELECT UserID, FullName, Age, Email, RegistrationDate, LastLoginDate, PurchaseTotal&#xA;FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE FullName IS NULL OR CHARINDEX(' ', FullName) &lt; 1&#xA;&#xA;DELETE FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE FullName IS NULL OR CHARINDEX(' ', FullName) &lt; 1&#xA;&#xA;COMMIT TRANSACTION" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Check LastLoginDate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AFDE4464-4F8E-429B-97E0-FE705039395E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check LastLoginDate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}"
+          SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#xA;INSERT INTO [KoreAssignment_{James_Cabaral}].[dbo].[Invalids]&#xA;SELECT UserID, FullName, Age, Email, RegistrationDate, LastLoginDate, PurchaseTotal&#xA;FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE LastLoginDate IS NULL OR LastLoginDate &lt; RegistrationDate OR LastLoginDate &gt; GETDATE()&#xA;&#xA;DELETE FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE LastLoginDate IS NULL OR LastLoginDate &lt; RegistrationDate OR LastLoginDate &gt; GETDATE()&#xA;&#xA;COMMIT TRANSACTION" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Check PurchaseTotal"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AEF352F8-30F6-4A27-A1D4-AF5B3BBA97E1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check PurchaseTotal"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}"
+          SQLTask:SqlStatementSource="UPDATE [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;SET PurchaseTotal = 0&#xA;WHERE PurchaseTotal IS NULL OR PurchaseTotal &lt; 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Check RegistrationDate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C991E9D4-4FE8-404B-B7F2-69A4E4D81E8D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check RegistrationDate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}"
+          SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#xA;INSERT INTO [KoreAssignment_{James_Cabaral}].[dbo].[Invalids]&#xA;SELECT UserID, FullName, Age, Email, RegistrationDate, LastLoginDate, PurchaseTotal&#xA;FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE RegistrationDate IS NULL OR DATEDIFF(year, RegistrationDate, LastLoginDate) &gt; Age&#xA;&#xA;DELETE FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE RegistrationDate IS NULL OR DATEDIFF(year, RegistrationDate, LastLoginDate) &gt; Age&#xA;&#xA;COMMIT TRANSACTION" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Check UserID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8CFDF74E-8CA2-4505-B9CD-0E5A39BF1DE2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check UserID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}"
+          SQLTask:SqlStatementSource="BEGIN TRANSACTION&#xA;&#xA;INSERT INTO [KoreAssignment_{James_Cabaral}].[dbo].[Invalids]&#xA;SELECT UserID, FullName, Age, Email, RegistrationDate, LastLoginDate, PurchaseTotal&#xA;FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE UserID IS NULL&#xA;&#xA;DELETE FROM [KoreAssignment_{James_Cabaral}].[stg].[Users]&#xA;WHERE UserID IS NULL&#xA;&#xA;COMMIT TRANSACTION" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CSV File Extraction"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{14BEC876-A381-46D1-BB68-C3D3E7B90614}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CSV File Extraction"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CSV File Extraction\Convert to Types"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert to Types"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CSV File Extraction\Convert to Types.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Inputs[Data Conversion Input].Columns[UserID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UserID"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Inputs[Data Conversion Input].Columns[Age]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Age"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Inputs[Data Conversion Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RegistrationDate"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Inputs[Data Conversion Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LastLoginDate"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Inputs[Data Conversion Input].Columns[PurchaseTotal]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PurchaseTotal"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[PurchaseTotal]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\CSV File Extraction\Convert to Types.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of UserID]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of UserID]"
+                      name="Copy of UserID"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[UserID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of Age]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of Age]"
+                      name="Copy of Age"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Age]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of RegistrationDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of RegistrationDate]"
+                      name="Copy of RegistrationDate"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of LastLoginDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of LastLoginDate]"
+                      name="Copy of LastLoginDate"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[LastLoginDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of PurchaseTotal]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output].Columns[Copy of PurchaseTotal]"
+                      name="Copy of PurchaseTotal"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[PurchaseTotal]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\CSV File Extraction\Convert to Types.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CSV File Extraction\CSV File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="4105"
+              name="CSV File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CSV File Extraction\CSV File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[UserID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[UserID]"
+                      length="50"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[UserID]"
+                      name="UserID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[FullName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[FullName]"
+                      length="50"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[FullName]"
+                      name="FullName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Age]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      length="50"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[Email]"
+                      length="50"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[RegistrationDate]"
+                      length="10"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]"
+                      name="RegistrationDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[LastLoginDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[LastLoginDate]"
+                      length="10"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[LastLoginDate]"
+                      name="LastLoginDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[PurchaseTotal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[PurchaseTotal]"
+                      length="50"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[PurchaseTotal]"
+                      name="PurchaseTotal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[UserID]"
+                      dataType="wstr"
+                      length="50"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      dataType="wstr"
+                      length="50"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="50"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].ExternalColumns[PurchaseTotal]"
+                      dataType="wstr"
+                      length="50"
+                      name="PurchaseTotal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CSV File Extraction\Invalids"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Invalids"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Invalids]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CSV File Extraction\Invalids.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-09SH8VG\SQL2022.KoreAssignment_{James_Cabaral\}1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-09SH8VG\SQL2022.KoreAssignment_{James_Cabaral\}1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].Columns[UserID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UserID"
+                      externalMetadataColumnId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RegistrationDate"
+                      externalMetadataColumnId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LastLoginDate"
+                      externalMetadataColumnId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].Columns[PurchaseTotal]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PurchaseTotal"
+                      externalMetadataColumnId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[PurchaseTotal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      dataType="wstr"
+                      length="50"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="wstr"
+                      length="50"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="50"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      dataType="wstr"
+                      length="50"
+                      name="PurchaseTotal" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CSV File Extraction\Invalids.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Invalids.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CSV File Extraction\Invalids.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Invalids.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CSV File Extraction\Invalids.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CSV File Extraction\Valids"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Valids"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[Users]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CSV File Extraction\Valids.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-09SH8VG\SQL2022.KoreAssignment_{James_Cabaral\}1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-09SH8VG\SQL2022.KoreAssignment_{James_Cabaral\}1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].Columns[UserID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="UserID"
+                      externalMetadataColumnId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[UserID]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].Columns[FullName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FullName"
+                      externalMetadataColumnId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[FullName]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].Columns[RegistrationDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="RegistrationDate"
+                      externalMetadataColumnId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].Columns[LastLoginDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="LastLoginDate"
+                      externalMetadataColumnId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[LastLoginDate]" />
+                    <inputColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].Columns[PurchaseTotal]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="PurchaseTotal"
+                      externalMetadataColumnId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      lineageId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output].Columns[PurchaseTotal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[StgID]"
+                      dataType="i4"
+                      name="StgID" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                      dataType="i4"
+                      name="UserID" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FullName" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="RegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[LastLoginDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="LastLoginDate" />
+                    <externalMetadataColumn
+                      refId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
+                      dataType="r8"
+                      name="PurchaseTotal" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CSV File Extraction\Valids.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Valids.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CSV File Extraction\Valids.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CSV File Extraction\Valids.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CSV File Extraction\Valids.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CSV File Extraction.Paths[Data Conversion Error Output]"
+              endId="Package\CSV File Extraction\Invalids.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\CSV File Extraction.Paths[Data Conversion Output]"
+              endId="Package\CSV File Extraction\Valids.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\CSV File Extraction\Convert to Types.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\CSV File Extraction.Paths[Flat File Source Output]"
+              endId="Package\CSV File Extraction\Convert to Types.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\CSV File Extraction\CSV File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Migrate to Prod Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0B47F147-6866-408E-8718-1F6421C84897}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Migrate to Prod Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB9AA7A1-26BE-45B3-B52C-E65852C84A67}"
+          SQLTask:SqlStatementSource="BEGIN TRANSACTION;&#xA;&#xA;MERGE [KoreAssignment_{James_Cabaral}].[prod].[Users] AS target&#xA;USING [KoreAssignment_{James_Cabaral}].[stg].[Users] AS source&#xA;ON target.UserID = source.UserID&#xA;WHEN MATCHED THEN&#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;target.FullName = source.FullName,&#xA;&#x9;&#x9;target.Age = source.Age,&#xA;&#x9;&#x9;target.Email = source.Email,&#xA;&#x9;&#x9;target.RegistrationDate = source.RegistrationDate,&#xA;&#x9;&#x9;target.LastLoginDate = source.LastLoginDate,&#xA;&#x9;&#x9;target.PurchaseTotal = source.PurchaseTotal&#xA;WHEN NOT MATCHED BY TARGET THEN&#xA;&#x9;INSERT (UserID, FullName, Age, Email, RegistrationDate, LastLoginDate, PurchaseTotal)&#xA;&#x9;VALUES (source.UserID, source.FullName, source.Age, source.Email, source.RegistrationDate, source.LastLoginDate, source.PurchaseTotal);&#xA;&#xA;COMMIT TRANSACTION;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D83317C2-9182-4365-9EF5-E2B801BBFC9C}"
+      DTS:From="Package\Check UserID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Check FullName" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A45DD858-7483-4C0F-A9AB-FFF9CCBCEE24}"
+      DTS:From="Package\Check FullName"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Check Email" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{A0B159C1-CE51-4C79-8368-514C585C8FCA}"
+      DTS:From="Package\Check Email"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Check RegistrationDate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{BBAF35EE-63C8-4C65-B7F4-17C89D40ABBF}"
+      DTS:From="Package\Check RegistrationDate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Check LastLoginDate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{16D7FB3A-E019-4611-B604-6B19306F37A1}"
+      DTS:From="Package\Check LastLoginDate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Check PurchaseTotal" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{AFD9C87F-0BCF-4911-B399-A44548C0E3AB}"
+      DTS:From="Package\CSV File Extraction"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Check UserID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{2AA1E9FC-E36F-4C54-98A9-C795BAC33078}"
+      DTS:From="Package\Check PurchaseTotal"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Check Duplicates" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{261C4EAF-40F4-40CA-8503-9B5222E4F74B}"
+      DTS:From="Package\Check Duplicates"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Migrate to Prod Table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Check Duplicates"
+          TopLeft="557,267" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Check Email"
+          TopLeft="417,145" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Check FullName"
+          TopLeft="228,143" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Check LastLoginDate"
+          TopLeft="819,147" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Check PurchaseTotal"
+          TopLeft="1028,145" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Check RegistrationDate"
+          TopLeft="587,146" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Check UserID"
+          TopLeft="48,143" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\CSV File Extraction"
+          TopLeft="552,32" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Migrate to Prod Table"
+          TopLeft="545,368" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="195,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33,0"
+              Start="0,0"
+              End="25.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="388,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,0"
+              Start="0,0"
+              End="21.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="558,166.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,0"
+              Start="0,0"
+              End="21.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="782,167.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37,0"
+              Start="0,0"
+              End="29.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1003,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25,0"
+              Start="0,0"
+              End="17.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="17.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="639,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-517.5,69"
+              Start="0,0"
+              End="-517.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
+                  <mssgle:LineSegment
+                    End="-513.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-513.5,34.5"
+                    Point2="-517.5,34.5"
+                    Point3="-517.5,38.5" />
+                  <mssgle:LineSegment
+                    End="-517.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="1120,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-480.5,80"
+              Start="0,0"
+              End="-480.5,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="-4,40" />
+                  <mssgle:LineSegment
+                    End="-476.5,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-476.5,40"
+                    Point2="-480.5,40"
+                    Point3="-480.5,44" />
+                  <mssgle:LineSegment
+                    End="-480.5,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="638.25,309">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CSV File Extraction">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="109,42"
+          Id="Package\CSV File Extraction\Valids"
+          TopLeft="430,290" />
+        <NodeLayout
+          Size="116,42"
+          Id="Package\CSV File Extraction\Invalids"
+          TopLeft="833,297" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CSV File Extraction\Convert to Types"
+          TopLeft="602,162" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\CSV File Extraction\CSV File Source"
+          TopLeft="602,37" />
+        <EdgeLayout
+          Id="Package\CSV File Extraction.Paths[Flat File Source Output]"
+          TopLeft="682.5,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83"
+              Start="0,0"
+              End="0,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CSV File Extraction.Paths[Data Conversion Output]"
+          TopLeft="657.333333333333,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-172.833333333333,86"
+              Start="0,0"
+              End="-172.833333333333,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.9046454767726" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.9046454767726"
+                    Point2="0,34.9046454767726"
+                    Point3="-4,34.9046454767726" />
+                  <mssgle:LineSegment
+                    End="-168.833333333333,34.9046454767726" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-168.833333333333,34.9046454767726"
+                    Point2="-172.833333333333,34.9046454767726"
+                    Point3="-172.833333333333,38.9046454767726" />
+                  <mssgle:LineSegment
+                    End="-172.833333333333,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CSV File Extraction.Paths[Data Conversion Error Output]"
+          TopLeft="683,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="208,93"
+              Start="0,0"
+              End="208,85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.5"
+                    Point2="0,46.5"
+                    Point3="4,46.5" />
+                  <mssgle:LineSegment
+                    End="204,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="204,46.5"
+                    Point2="208,46.5"
+                    Point3="208,50.5" />
+                  <mssgle:LineSegment
+                    End="208,85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.91361328125,51.5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CSV File Extraction\Valids">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CSV File Extraction\Invalids">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
