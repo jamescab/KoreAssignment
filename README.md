@@ -19,46 +19,46 @@ Data that is successfully converted is pushed to the staging table.
 
 ### Data Cleaning:
 Data after extraction must be cleaned or isolated to the invalids table if it is semantically incorrect and must be reviewed. Rows are cleaned or isolated based on the following criteria for each column:
-UserID
+**UserID**
 | Case | Example | Action  |
 | ---- |---------| --------|
 | NULL value | NULL | Move to invalids |
 
 *UserID is converted to a four-byte unsigned integer, thus automatically moving UserIDs < 0 to invalids in data conversion. Therefore, this case was eliminated from consideration in the staging process.*
 
-FullName
+**FullName**
 | Case | Example | Action  |
 | ---- |---------| --------|
 | NULL value | NULL | Move to invalids |
 | Not a full name | “Johnny” | Move to invalids |
 
-Age
+**Age**
 | Case | Example | Action  |
 | ---- |---------| --------|
 | NULL value | NULL | Move to invalids |
 
 *Age is converted to a single-byte unsigned integer, thus automatically moving Ages < 0 to invalids in data conversion. Therefore, this case was eliminated from consideration in the staging process.*
 
-Email
+**Email**
 | Case | Example | Action  |
 | ---- |---------| --------|
 | NULL value | NULL | Move to invalids |
 | Does not contain “@” | “notanemail” | Move to invalids |
 
-RegistrationDate
+**RegistrationDate**
 | Case | Example | Action  |
 | ---- |---------| --------|
 | NULL value | NULL | Move to invalids |
 | Date being older than user (i.e. a really old date) | Age = 90, RegistrationDate = 1920-01-01 | Move to invalids |
 
-LastLoginDate
+**LastLoginDate**
 | Case | Example | Action  |
 | ---- |---------| --------|
 | NULL value | NULL | Move to invalids |
 | LastLoginDate earlier than RegistrationDate | LastLoginDate = 1/1/2000, RegistrationDate = 1/1/2020 | Move to invalids |
 | LastLoginDate in the future | 1/1/2050 | Move to invalids |
 
-PurchaseTotal
+**PurchaseTotal**
 | Case | Example | Action  |
 | ---- |---------| --------|
 | NULL value | NULL | Set to 0. |
