@@ -19,6 +19,7 @@ Data that is successfully converted is pushed to the staging table.
 
 ### Data Cleaning:
 Data after extraction must be cleaned or isolated to the invalids table if it is semantically incorrect and must be reviewed. Rows are cleaned or isolated based on the following criteria for each column:
+
 **UserID**
 | Case | Example | Action  |
 | ---- |---------| --------|
